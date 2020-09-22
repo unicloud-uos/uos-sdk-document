@@ -24,14 +24,14 @@ STS为紫光云提供的临时访问权限管理服务。其优势如下：
 
 1. 设置AccessKey、SecretKey、Endpoint和Region
 
-   ```
-   String accessKey = "amDxMhSz6hUGorLK";
-        String secretKey = "6DneQhipsfe76KSxrded3oG6lqpNny";
-        AWSStaticCredentialsProvider credential = new AWSStaticCredentialsProvider(
+```
+String accessKey = "XXXXXXXXX";
+String secretKey = "XXXXXXXXXXXXXXXXXX";
+AWSStaticCredentialsProvider credential = new AWSStaticCredentialsProvider(
                 new BasicAWSCredentials(accessKey, secretKey));
-        EndpointConfiguration endpoint = new EndpointConfiguration("http://sts-
+EndpointConfiguration endpoint = new EndpointConfiguration("http://sts-
 beijing.unicloudsrv.com", "cn-beijing-1");
- ```
+```
 
  > **说明：**
  > 
@@ -56,10 +56,10 @@ AWSSecurityTokenService stsClient = AWSSecurityTokenServiceClientBuilder.standar
 // withName: 填写您系统内的用户名，长度2-32字节
 // withPolicy: 请按照样例完整填写
 // withDurationSeconds: 临时Token有效时间，单位为秒，最短900秒，最长129600秒
-            GetFederationTokenRequest request = new GetFederationTokenRequest().withName("Bob")
+GetFederationTokenRequest request = new GetFederationTokenRequest().withName("Bob")
                     .withPolicy("{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Sid1\",\"Effect\":\"Allow\",\"Action\":[\"s3:*\"],\"Resource\":[\"*\"]}]}")
                     .withDurationSeconds(3600);
-            GetFederationTokenResult response = stsClient.getFederationToken(request);
+GetFederationTokenResult response = stsClient.getFederationToken(request);
 ```
 
 4. 获得临时令牌，包含AccessKeyId、SecretAccessKey和SessionToken
@@ -98,8 +98,8 @@ Credentials tempCredential = response.getCredentials();
  ```
 let endpoint = AWSEndpoint.init(urlString: "https://oss-cn-north-2.unicloudsrv.com") // 紫光云北京节点
 let credentialProvider = AWSBasicSessionCredentialsProvider.init(
-                    accessKey: "UP9TA5DPLG9SU20FD7OT",
-                    secretKey: "CjyUv6NJTGTBkT16iDRnnE0jv25ktpiV9NDE9gKD",
+                    accessKey: "XXXXXXXXX",
+                    secretKey: "XXXXXXXXXXXXXXXXXX",
                     sessionToken:  "Aet0i9YvGMPNmb0vOkAiMC3GU4V+NhkPxXyUToWk+TRE2967MpmM4HdyWygnEppIj/QfzSd8vpkFe3/TmFQukuoAxUg/CiGVynM7/aieAbEt1zbjW3A3mmfukR177VX1Ljz3EkW5smYcn9U29dOcCpwQqpwWXdC9cEYgs+/Qbv4AnsVje2TLJCPb2KguGRBEKyMCPhlJsrKyI/KeT/OS5aFSK05bXpUvdcg+")
  ```
 
@@ -108,8 +108,8 @@ let credentialProvider = AWSBasicSessionCredentialsProvider.init(
  ```
 AWSEndpoint *endpoint = [[AWSEndpoint alloc] initWithURLString:@"https://oss-cn-north-2.unicloudsrv.com"]; // 紫光云北京节点
 AWSBasicSessionCredentialsProvider *credentialProvider = [[AWSBasicSessionCredentialsProvider alloc]
-                                                        initWithAccessKey:@"UP9TA5DPLG9SU20FD7OT"
-                                                        secretKey:@"CjyUv6NJTGTBkT16iDRnnE0jv25ktpiV9NDE9gKD"
+                                                        initWithAccessKey:@"XXXXXXXXX"
+                                                        secretKey:@"CjyUv6NXXXXXXXXXXXXXXXXXXJTGTBkT16iDRnnE0jv25ktpiV9NDE9gKD"
                                                     sessionToken:@"Aet0i9YvGMPNmb0vOkAiMC3GU4V+NhkPxXyUToWk+TRE2967MpmM4HdyWygnEppIj/QfzSd8vpkFe3/TmFQukuoAxUg/CiGVynM7/aieAbEt1zbjW3A3mmfukR177VX1Ljz3EkW5smYcn9U29dOcCpwQqpwWXdC9cEYgs+/Qbv4AnsVje2TLJCPb2KguGRBEKyMCPhlJsrKyI/KeT/OS5aFSK05bXpUvdcg+"
                                                         ];
 ```
@@ -179,8 +179,8 @@ transferUtility.uploadData(
 
 1. 从APP后端获取可用的临时密钥: AccessKey、SecretKey和SessionToken
 ```
-String accessKey = "UP9TA5DPLG9SU20FD7OT";
-String secretKey = "CjyUv6NJTGTBkT16iDRnnE0jv25ktpiV9NDE9gKD";
+String accessKey = "XXXXXXXXX";
+String secretKey = "XXXXXXXXXXXXXXXXXX";
 String sessionToken = "Aet0i9YvGMPNmb0vOkAiMC3GU4V+NhkPxXyUToWk+TRE2967MpmM4HdyWygnEppIj/QfzSd8vpkFe3/TmFQukuoAxUg/CiGVynM7/aieAbEt1zbjW3A3mmfukR177VX1Ljz3EkW5smYcn9U29dOcCpwQqpwWXdC9cEYgs+/Qbv4AnsVje2TLJCPb2KguGRBEKyMCPhlJsrKyI/KeT/OS5aFSK05bXpUvdcg+";
 ```
 
@@ -224,8 +224,8 @@ function upload() {
     console.log("upload")
     AWS.config.endpoint = "http://s3.test.com:9090"
     AWS.config.region = "cn-beijing-1"
-    AWS.config.accessKeyId = "Q98WBDY76XWP9Z7L1JLE"
-    AWS.config.secretAccessKey = "88QKhSJJl7XH7arxd2wp7NBhVZxngUW9yC1cnWP4"
+    AWS.config.accessKeyId = "XXXXXXXXX"
+    AWS.config.secretAccessKey = "XXXXXXXXXXXXXXXXXX"
     AWS.config.sessionToken = "AQ2hkbs76rpyvG014H3FyVOi+Kd2KbZ1MG/puM7/TUh10ycSexcsKJ3NTJ6MA7vw84qXSP52oQzWuejacuKjFkEdx5btFYuBYQeqZB/Rq/0r/bt93HipnFL+MgcMd8vNAtFyFyvaifVdj8KP1s8rsSV3W/PGD/76VIiIF5YnsdQdUbzURecvrzFaKSKFFriLF4aEj6q1TEbGv6R8Kpxp5OAxg0SkCAsfe6YR"
     AWS.config.s3ForcePathStyle = true
     s3 = new AWS.S3()
