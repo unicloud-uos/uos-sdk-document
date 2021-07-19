@@ -1,8 +1,8 @@
-# uos-sdk-document
+﻿# uos-sdk-document
 Description for use UOS sdk
 
 # 修订记录
- 
+
 > 2020年4月4日：
 > 第一次发布。
 >
@@ -29,3 +29,6 @@ Description for use UOS sdk
 >
 > 2020年9月22日：
 > Go SDK >下载文件 >分片下载，增加说明
+>
+> 2021年7月19日：
+> Go SDK>前言>修改SDK源码下载路径
