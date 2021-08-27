@@ -46,3 +46,6 @@ Description for use UOS sdk
 > 
 > 2021年7月19日：
 > Go SDK>前言>修改SDK源码下载路径
+>
+> 2021年8月27日：
+> 初始化pdf文档，修改各个文件名
